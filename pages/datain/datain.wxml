@@ -1,0 +1,68 @@
+<!--datain.wxml-->
+
+<view class="page">
+  <view class="page_hd"></view>
+  <view class="page_bd">
+
+    <!--文字显示输入-->
+    <view class="self-container">
+      <!--二维码结果-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell_hd">
+          <view class="weui-label">扫码信息: </view>
+        </view>
+        <view class="weui-cell__bd">
+          <text>{{code}}</text>
+        </view>
+      </view>
+      <!--当前库存-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell_hd">
+          <view class="weui-label">当前库存: </view>
+        </view>
+        <view class="weui-cell__bd">
+          <text>{{count}}</text>
+        </view>
+      </view>
+      <!--仓库选择器-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell_hd">
+          <view class="weui-label">仓库名: </view>
+        </view>
+        <view class="weui-cell__bd">
+          <text>{{dir}}</text>
+        </view>
+      </view>
+      
+      <!--商品名 输入框-->
+        <view class="weui-cells__title" style="color:green">商品名</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="{{name}}" bindinput="namein" />
+                </view>
+            </view>
+        </view>
+      <!--备注信息-->
+      
+        <view class="weui-cells__title" style="color:green">备注</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="{{remarks}}" style="height: 3.3em" bindinput="remarkin" />
+                    <!--<view class="weui-textarea-counter">0/200</view>-->
+                </view>
+            </view>
+        </view>
+      <!--文字显示输入结束-->
+
+      <button bindtap="saveDataIn" class="weui-btn self-btn" type="primary">保存</button>
+
+      <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">**Crossin的编程教室**</view>
+  </view>
+    </view>
+  </view>
+</view>
+
+

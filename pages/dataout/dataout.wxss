@@ -1,0 +1,11 @@
+/* dataout.wxss */
+
+.self-out-container{
+  margin: 100px auto;
+  width: 80%;
+}
+
+.self-out-btn{
+  margin: 100px auto;
+  /*width: */
+}

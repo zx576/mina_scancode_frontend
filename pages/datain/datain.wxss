@@ -1,0 +1,10 @@
+/* datain.wxss */
+
+.self-container{
+  margin: 100px auto;
+  width: 80%;
+}
+
+.self-btn{
+  margin: 100px auto
+}

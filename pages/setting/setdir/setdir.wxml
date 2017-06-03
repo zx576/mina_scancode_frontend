@@ -1,0 +1,24 @@
+<!--setdir.wxml-->
+<view class="page">
+  <view class="page__hd"></view>
+  <view class="page__bd self-container">
+    <!--<view class="self-container">-->
+    <!--选择器-->
+    <view class="section self-container">
+      <view class="section__title">仓库选择器</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{dirArray}}">
+      <view class="picker ">
+        当前仓库(点我选择)：{{dirArray[index]}}
+      </view>
+      </picker>
+    </view>
+
+    <button class="weui-btn" type="primary" bindtap="returnindex">返回主页</button>
+    <!--选择器 end-->
+    <!--</view>-->
+    <view class="weui-footer weui-footer_fixed-bottom">
+
+    <view class="weui-footer__text">**Crossin的编程教室**</view>
+  </view>
+  </view>
+</view>

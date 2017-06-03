@@ -1,0 +1,47 @@
+<!--instruction.wxml-->
+<view class="page">
+  <view class="page__hd"></view>
+  <view class="page__bd">
+    <view class="display_area">
+      <view class="text">
+        <text>
+        想了解更多信息，获取源码以及开发教程、定制开发功能等，请联系公众号 "Crossin的编程教室" 
+        </text>
+        <text>
+        扫码入库小程序使用说明:
+        
+        1、入库
+        点击入库按钮，进行扫码操作，成功则进入保存页面。
+
+        如果数据库内有该商品信息，在保存页面会显示该商品的库存、商品名、备注信息，其中商品名、备注信息可进行修改，点击保存按钮进行保存操作。
+
+        如果数据库无该商品信息，需要手动填写商品名和备注信息。
+
+        2、出库
+        点击出库按钮，进行扫码操作
+
+        当数据库有该商品信息，则进入出库保存页面，点击出库按钮即可；
+
+        当数据库无该商品信息，报错。
+
+        3、查询
+        点击查询按钮，会显示当前操作库中的所有商品信息，点击仓库名可切换仓库查看其他仓库信息。
+
+        4、设置
+        设置包含两个方面: 新建仓库、设置默认仓库
+
+        设置默认仓库可切换当前操作仓库，强烈建议出入库之前确认当前操作仓库，以免出入库错误。
+
+        新建仓库允许当前操作人建立属于自己的仓库。
+
+
+        </text>
+
+        <button class="weui-btn" type="primary" bindtap="returnindex">返回主页</button>
+        <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">**Crossin的编程教室**</view>
+  </view>
+      </view>
+    </view>
+  </view>
+</view>

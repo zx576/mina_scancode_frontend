@@ -1,0 +1,20 @@
+{
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "green",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "image/gitlogo.png",
+        "selectedIconPath": "image/gitlogo.png"
+      },
+      {
+        "pagePath": "pages/query/query",
+        "text": "查询",
+        "iconPath": "image/gitlogo.png",
+        "selectedIconPath": "image/gitlogo.png"
+      }
+    ]
+  }
+}

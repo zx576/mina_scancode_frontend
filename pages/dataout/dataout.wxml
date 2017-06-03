@@ -1,0 +1,66 @@
+<!--dataout.wxml-->
+
+<view class="page">
+  <view class="page_hd"></view>
+  <view class="page_bd">
+    <!--页面容器-->
+    <view class="self-out-container">
+      <!--页面信息-->
+      <!--扫码信息-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell_hd">
+          <view class="weui-label">扫码信息: </view>
+        </view>
+        <view class="weui-cell__bd">
+          <text>{{code}}</text>
+        </view>
+      </view>
+      <!--仓库选择器-->
+            <view class="weui-cell weui-cell_input">
+        <view class="weui-cell_hd">
+          <view class="weui-label">仓库名: </view>
+        </view>
+        <view class="weui-cell__bd">
+          <text>{{dir}}</text>
+        </view>
+      </view>
+
+      <!--库存数量-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell_hd">
+          <view class="weui-label">库存数量: </view>
+        </view>
+        <view class="weui-cell__bd">
+          <text>{{count}}</text>
+        </view>
+      </view>
+      <!--商品名-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell_hd">
+          <view class="weui-label">商品名: </view>
+        </view>
+        <view class="weui-cell__bd">
+          <text>{{name}}</text>
+        </view>
+      </view>
+      <!--备注名-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell_hd">
+          <view class="weui-label">备注信息: </view>
+        </view>
+        <view class="weui-cell__bd">
+          <text>{{remarks}}</text>
+        </view>
+      </view>
+      
+      <!--确认出库按钮-->
+      <button bindtap="dataOut" class="weui-btn self-out-btn" type="primary" plain='true'>确认出库</button>
+      <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">**Crossin的编程教室**</view>
+  </view>
+    </view>
+  </view>
+</view>
+
+
+

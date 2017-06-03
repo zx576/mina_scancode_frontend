@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/setting/setting",
+    "pages/query/query",
+    "pages/datain/datain",
+    "pages/dataout/dataout",
+    "pages/error/error",
+    "pages/success/success",
+    "pages/setting/buildnew/buildnew",
+    "pages/setting/setdir/setdir",
+    "pages/setting/instruction/instruction"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "green",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "image/gitlogo.png",
+        "selectedIconPath": "image/gitlogo.png"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "text": "设置",
+        "iconPath": "image/gitlogo.png",
+        "selectedIconPath": "image/gitlogo.png"
+      }
+    ]
+  }
+}

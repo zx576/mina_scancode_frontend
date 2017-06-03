@@ -1,0 +1,11 @@
+/* buildnew.wxss */
+.self-container{
+  width: 80%;
+  margin: 100px auto
+
+}
+
+.self-btn{
+  width: 80%;
+  margin: 100px auto
+}

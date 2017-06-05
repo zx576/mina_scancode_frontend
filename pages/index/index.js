@@ -8,12 +8,12 @@ Page({
     dir: '',
   },
   //事件处理函数
-  bindViewTap: function() {
+  // bindViewTap: function() {
 
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+  //   wx.navigateTo({
+  //     url: '../logs/logs'
+  //   })
+  // },
   // 加载函数
   onLoad: function () {
     var that = this

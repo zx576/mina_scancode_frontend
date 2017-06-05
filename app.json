@@ -19,21 +19,26 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "black",
-    "selectedColor": "green",
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "主页",
-        "iconPath": "image/gitlogo.png",
-        "selectedIconPath": "image/gitlogo.png"
+        "iconPath": "image/main.png",
+        "selectedIconPath": "image/main_green.png",
+        "text": "主页"
       },
       {
         "pagePath": "pages/setting/setting",
-        "text": "设置",
-        "iconPath": "image/gitlogo.png",
-        "selectedIconPath": "image/gitlogo.png"
+        "iconPath": "image/setting.png",
+        "selectedIconPath": "image/setting_green.png",
+        "text": "设置"
       }
     ]
   }
 }
+
+
+

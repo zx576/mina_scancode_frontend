@@ -48,7 +48,7 @@ App({
             // console.log('getuserinfosuc',res)
             encryptdata['encrypteddata'] = res['encryptedData']
             encryptdata['iv'] = res['iv']
-            // console.log('加密信息',encryptdata)
+            console.log('加密信息',encryptdata)
             // 请求服务器
             wx.request({
               url: domain_url+'login/',
@@ -58,12 +58,14 @@ App({
                 'content-type': 'application/x-www-form-urlencoded'
               },
               success: function (res) {
+                var info = res['data']
                 // console.log('login_r', res)
-                if (typeof res.error !== 'undefined') {
+                if (typeof info.error !== 'undefined') {
                   // 与服务器链接失败
                   console.log('与服务器链接失败')
+                  
                   wx.navigateTo({
-                    url: '../error/error?errorinfo=' + '服务器未响应',
+                    url: '../error/error?error=' + info.error,
                   })
                 } else {
                   // 服务器返回内容

@@ -110,9 +110,10 @@ Page({
       success: function (res) {
         console.log(res)
         var info = res.data
-        if (typeof res.error !== 'undefined'){
+        if (typeof info.error !== 'undefined'){
+
           wx.navigateTo({
-            url: '../error/error?error=' + res.error,
+            url: '../error/error?error=' + info.error,
           })
         } else {
           var count = info.cur_count

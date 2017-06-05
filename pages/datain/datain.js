@@ -124,6 +124,15 @@ Page({
 
     console.log('所有数据',data)
 
+    // 处理商品名,备注名为空的情况
+    if (data['name'] == '请输入商品名'){
+      data['name'] = data['code'].substring(0,16)
+    }
+
+    if (data['remarks'] == '请输入商品备注'){
+      data['remarks'] = ''
+    }
+
     // 请求后台，保存数据
     wx.request({
       url: domain_url + 'datain/',

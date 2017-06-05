@@ -41,6 +41,14 @@ Page({
     data['dirname'] = dirname
     var domain_url = this.data.domain
 
+    // 判断仓库名为空
+    if (data['dirname'] == ''){
+      wx.navigateTo({
+        url: '/pages/error/error?error=' + '仓库名不能为空',
+      })
+      return
+    }
+
     wx.request({
       url: domain_url + 'builddir/',
       method: 'POST',

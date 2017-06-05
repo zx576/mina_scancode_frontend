@@ -14,8 +14,8 @@ Page({
     remarks: '请输入商品备注',
     count: 0, // 商品数量默认为0
     dir:'',  // 仓库名
-    // cookie
-    cookie: '' 
+    cookie: '',
+    domain: ''
 
   },
 
@@ -27,38 +27,41 @@ Page({
     var that = this
     var cookie = app.globalData.cookie
     var dir = app.globalData.cur_dir
-    var domin = app.globalData.domin
+    var domain = app.globalData.domain
 
     this.setData({
       code: options.res,
       cookie: cookie,
       dir: dir,
-      domin: domin,
+      domain: domain,
 
     })
 
-    console.log('thisdata',this.data)
+    // console.log('thisdata',this.data)
 
   this.query_qr2()
 
   },
 
   query_qr2: function(){
+
     var that = this
     var data = {}
     data['cookie'] = this.data.cookie
     data['code'] = this.data.code
     data['dir'] = this.data.dir
-    var domin_url = this.data.domin
+    var domain_url = this.data.domain
 
+    // 请求后台，获取扫码商品详细信息
     wx.request({
-      url: domin_url + 'checkqr/',
-      data: data,
+      url: domain_url + 'checkqr/',
+      method: 'POST',
+      data: Util.json2Form(data),
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         var info = res['data']
         if (typeof info.error !== 'undefined') {
           // 用户信息错误
@@ -71,8 +74,6 @@ Page({
           console.log(info)
         } else {
           // 数据库内有该条目
-
-
           that.setData({
             
             name: info['name'],
@@ -107,14 +108,14 @@ Page({
     that.setData({
       remarks: remarks
     })
-    console.log('insideif',that.data.remarks)
+    // console.log('insideif',that.data.remarks)
     
   },
 
   saveDataIn: function () {
   
     var data = {}
-    var domin_url = this.data.domin
+    var domain_url = this.data.domain
     data['name'] = this.data.name
     data['code'] = this.data.code
     data['remarks'] = this.data.remarks
@@ -123,14 +124,16 @@ Page({
 
     console.log('所有数据',data)
 
+    // 请求后台，保存数据
     wx.request({
-      url: domin_url + 'datain/',
-      data: data,
+      url: domain_url + 'datain/',
+      method: 'POST',
+      data: Util.json2Form(data),
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         var returndata = res.data
         // var errorinfo = ''
         if (typeof returndata.error !== 'undefined'){
@@ -157,15 +160,6 @@ Page({
         })
       }
     })
-
-
-    // wx.switchTab({
-    //   url: '/pages/index/index',
-    // })
-
-    // console.log('save')
-    
-
 
   },
 
@@ -218,3 +212,6 @@ Page({
   
   }
 })
+
+// 导入 utils
+var Util = require('../../utils/util.js')

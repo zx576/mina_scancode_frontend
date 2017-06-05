@@ -6,12 +6,9 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登陆认证用户
-    // this.login_u()
-
-    // 
   },
 
+  // 弃用方法
   getUserInfo:function(cb){
     console.log(cb)
     var that = this
@@ -37,36 +34,31 @@ App({
   // 认证用户
   login_u: function (cb) {
     var that = this
-    var domin_url = this.globalData.domin
+    var domain_url = this.globalData.domain
     var encryptdata = {}
     // 登陆
     wx.login({
       success: function (res) {
-        console.log('loginsuc',res)
-
+        // console.log('loginsuc',res)
         encryptdata['code'] = res['code']
+        
         // 请求用户信息
         wx.getUserInfo({
           success: function (res) {
-            console.log('getuserinfosuc',res)
-
-            // that.globalData.UserInfo = res['rawData']
+            // console.log('getuserinfosuc',res)
             encryptdata['encrypteddata'] = res['encryptedData']
             encryptdata['iv'] = res['iv']
-
-            console.log('加密信息',encryptdata)
+            // console.log('加密信息',encryptdata)
             // 请求服务器
             wx.request({
-              url: domin_url+'login/',
-              data: encryptdata,
+              url: domain_url+'login/',
+              method:'POST',
+              data: Util.json2Form(encryptdata),
               header: {
-                'content-type': 'application/json'
+                'content-type': 'application/x-www-form-urlencoded'
               },
               success: function (res) {
-                // 出错位置
-                console.log('login_r', res)
-                // console.log('login_r_type', typeof (res['data']['cookie']))
-
+                // console.log('login_r', res)
                 if (typeof res.error !== 'undefined') {
                   // 与服务器链接失败
                   console.log('与服务器链接失败')
@@ -74,7 +66,6 @@ App({
                     url: '../error/error?errorinfo=' + '服务器未响应',
                   })
                 } else {
-
                   // 服务器返回内容
                   var info = res['data']
                   var userinfo = info['info']
@@ -84,20 +75,13 @@ App({
                     data: userinfo['cookie']
                   })
 
-                  // 添加全局 cookie
-                  // that.setData({
-                  //   cookie: res['data']['cookie']
-
-                  // })
+                  // 添加全局数据
                   that.globalData.cookie = userinfo['cookie']
                   that.globalData.userInfo = userinfo
                   that.globalData.dirs = info['dirs']
                   that.globalData.cur_dir = info['dirs'][0]
-                  console.log('global',that.globalData)
+                  // console.log('global',that.globalData)
                   typeof cb == "function" && cb(that.globalData)
-
-
-
                 }
               },
               // 请求服务器失败
@@ -138,9 +122,11 @@ App({
     userInfo:null,
     cur_dir: null,
     dirs: null,
-    domin: 'https://lab.crossincode.com/scan/',
+    domain: 'https://lab.crossincode.com/scan/',
+    // domain: 'http://127.0.0.1:8000/scan/',
     cookie: ''
   },
 
-  // console.log()
 })
+// 导入 utils 处理 post 请求数据
+var Util = require('./utils/util.js')

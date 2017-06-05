@@ -9,7 +9,7 @@ Page({
 
   cookie: '',
   dir: '',
-  domin: '',
+  domain: '',
   // 仓库数据
   info: '',  // 某一仓库下所有数据
   alldata: '', // 全部仓库数据
@@ -27,7 +27,7 @@ Page({
     // this.get_cookie()
     var cookie = app.globalData.cookie
     var dir = app.globalData.cur_dir
-    var domin = app.globalData.domin
+    var domain = app.globalData.domain
     var dirs = app.globalData.dirs
 
     var cur_index = 0
@@ -45,7 +45,7 @@ Page({
       // code: options.res,
       cookie: cookie,
       dir: dir,
-      domin: domin,
+      domain: domain,
       index: cur_index
 
     })
@@ -57,20 +57,21 @@ Page({
   query_dt: function(){
     var that = this
     var data = {}
-    var domin_url = this.data.domin
+    var domain_url = this.data.domain
     var dir = this.data.dir
     data['cookie'] = this.data.cookie
 
     console.log('querydata',this.data)
 
     wx.request({
-      url: domin_url + 'query/',
-      data: data,
+      url: domain_url + 'query/',
+      method: 'POST',
+      data: Util.json2Form(data),
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         var info = res['data']
         if (typeof info.error !== 'undefined') {
           // 错误处理
@@ -203,3 +204,4 @@ Page({
   
   }
 })
+var Util = require('../../utils/util.js')

@@ -9,7 +9,7 @@ Page({
   data: {
     code: '',
     cookie: '',
-    domin: '',
+    domain: '',
     dir: '',
     name: '',
     remarks:'',
@@ -25,13 +25,13 @@ Page({
 
     var cookie = app.globalData.cookie
     var dir = app.globalData.cur_dir
-    var domin = app.globalData.domin
+    var domain = app.globalData.domain
 
     this.setData({
       code: options.code,
       cookie: cookie,
       dir: dir,
-      domin: domin,
+      domain: domain,
 
     })
 
@@ -46,18 +46,20 @@ Page({
     data['cookie'] = this.data.cookie
     data['code'] = this.data.code
     data['dir'] = this.data.dir
-    var domin_url = this.data.domin
+    var domain_url = this.data.domain
 
-    console.log('dtout',this.data)
+    // console.log('dtout',this.data)
 
+    // 查询扫码信息
     wx.request({
-      url: domin_url + 'checkqr/',
-      data: data,
+      url: domain_url + 'checkqr/',
+      method: 'POST',
+      data: Util.json2Form(data),
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         var info = res['data']
         if (typeof info.error !== 'undefined') {
           // 用户信息错误
@@ -88,19 +90,22 @@ Page({
   }, 
 
   dataOut: function(){
+
     var data = {}
-    var domin_url = this.data.domin
+    var domain_url = this.data.domain
     data['code'] = this.data.code
     data['dir'] = this.data.dir
     data['cookie'] = this.data.cookie
-    // data[]
 
-    console.log(data)
+
+    // console.log(data)
+    // 与后台交互
     wx.request({
-      url: domin_url + 'dataout/',
-      data: data,
+      url: domain_url + 'dataout/',
+      method: 'POST',
+      data: Util.json2Form(data),
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
         console.log(res)
@@ -118,11 +123,6 @@ Page({
         }
       }
     })
-
-
-    // wx.switchTab({
-    //   url: '/pages/index/index',
-    // })
 
   },
   /**
@@ -174,3 +174,4 @@ Page({
   
   }
 })
+var Util = require('../../utils/util.js')

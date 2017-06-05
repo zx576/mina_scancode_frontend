@@ -8,6 +8,7 @@ Page({
   data: {
     dirname: '', // 仓库名
     cookie: '',
+    domain: ''
   },
 
 
@@ -16,37 +17,39 @@ Page({
    */
   onLoad: function (options) {
     var cookie = app.globalData.cookie
-    var domin = app.globalData.domin
+    var domain = app.globalData.domain
     this.setData({
       cookie: cookie,
-      domin: domin
+      domain: domain
     })
 
   },
 
   getinput: function (e) {
-    console.log(e)
+    // console.log(e)
     this.setData({
       dirname: e.detail.value
     })
   },
 
+  // 提交新建仓库
   submit: function () {
     // var that = this
     var data = {}
     data['cookie'] = this.data.cookie
     var dirname = this.data.dirname
     data['dirname'] = dirname
-    var domin_url = this.data.domin
+    var domain_url = this.data.domain
 
     wx.request({
-      url: domin_url + 'builddir/',
-      data: data,
+      url: domain_url + 'builddir/',
+      method: 'POST',
+      data: Util.json2Form(data),
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         var info = res['data']
         if (typeof info.error !== 'undefined') {
           wx.navigateTo({
@@ -123,3 +126,4 @@ Page({
 
   }
 })
+var Util = require('../../../utils/util.js')

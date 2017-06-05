@@ -19,7 +19,7 @@ Page({
     var that = this
 
     app.login_u(function(globaldata){
-      console.log('globaldt_index',globaldata)
+      // console.log('globaldt_index',globaldata)
       that.setData({
         userInfo: globaldata.userInfo,
         dir: globaldata.cur_dir,
@@ -27,22 +27,14 @@ Page({
       })
     })
   
-    console.log('indexdata',this.data)
+    // console.log('indexdata',this.data)
     // 状态
-   
-    // 测试
-    wx.request({
-      url: 'http://lab.crossincode.com/scan/test/',
-      success: function(res){
-        console.log('test',res)
-      }
-    })
 
     
   },
   
   onShow: function () {
-    console.log('onshow',app.globalData)
+    // console.log('onshow',app.globalData)
     var g_dir = app.globalData.cur_dir
     var i_dir = this.data.dir
 
@@ -75,8 +67,6 @@ Page({
 
   // 扫码出库
   dataout: function(){
-    // var uin = this.data.openid
-    // console.log(uin)
 
     wx.scanCode({
       success: function(res){
@@ -97,9 +87,9 @@ Page({
 
   // 查询条目
   query: function(){
-    var uin = this.data.openid
+    
     wx.navigateTo({
-      url: '../query/query?uin='+uin,
+      url: '../query/query',
     })
   }
 

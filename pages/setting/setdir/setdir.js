@@ -7,7 +7,7 @@ Page({
    */
   data: {
     cookie: '',
-    domin: '',
+    domain: '',
     dirArray: '', // 所有仓库名列表
     objectArray:'', // 仓库以及索引
     dir: '', // 目前选择
@@ -22,15 +22,15 @@ Page({
 
     var cookie = app.globalData.cookie
     var dir = app.globalData.cur_dir
-    var domin = app.globalData.domin
+    var domain = app.globalData.domain
     var dirs = app.globalData.dirs
-    console.log('stdirs=',dirs)
+    // console.log('stdirs=',dirs)
     var count = 0
     var obj = []
     var cur_index = 0
 
     for (var key of dirs){
-      console.log('key=',key)
+      // console.log('key=',key)
       if (key == dir){
         cur_index = count
       }
@@ -44,25 +44,25 @@ Page({
     this.setData({
       cookie: cookie,
       dir: dir,
-      domin:domin,
+      domain:domain,
       objectArray:obj,
       index:cur_index,
       dirArray:dirs 
     })
     
     // this.query_dir()
-    console.log('setdir',this.data)
+    // console.log('setdir',this.data)
 
     
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     var index = e.detail.value
     this.setData({
       index: index
     })
     app.globalData.cur_dir = this.data.dirArray[index]
-    console.log('changedir', app.globalData.cur_dir)
+    // console.log('changedir', app.globalData.cur_dir)
   },
 
   returnindex: function () {

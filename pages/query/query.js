@@ -139,7 +139,7 @@ Page({
     this.setData({
       index: e.detail.value,
       info: dct,
-      // dir: dir,
+      dir: dir,
       // name: dct['name'],
       // remark: dct['remarks']
 

@@ -1,6 +1,15 @@
 <!--index.wxml-->
 <view class="page">
   <view class="page__hd">
+
+  <!--加载页面-->
+  <view>
+    <loading hidden="{{hidden}}">
+      {{loadtext}}
+    </loading>
+  </view>
+
+  <!--end-->
     <text class="self-hd-text">操作者：{{userInfo.nickName}}</text>
   </view>
   <view class="page__bd">

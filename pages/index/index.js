@@ -6,6 +6,8 @@ Page({
     userInfo: {},
     status:'正在连接服务器',
     dir: '',
+    hidden: false,
+    loadtext: '加载中...'
   },
   //事件处理函数
   // bindViewTap: function() {
@@ -20,11 +22,20 @@ Page({
 
     app.login_u(function(globaldata){
       // console.log('globaldt_index',globaldata)
-      that.setData({
-        userInfo: globaldata.userInfo,
-        dir: globaldata.cur_dir,
+      if (globaldata.cur_dir !== 'undefined'){
+        that.setData({
+          userInfo: globaldata.userInfo,
+          dir: globaldata.cur_dir,
+          hidden: true
 
-      })
+        })
+      } else {
+        that.setData({
+
+          loadtext: '加载失败，请稍后重试'
+        })
+      }
+
     })
   
     // console.log('indexdata',this.data)

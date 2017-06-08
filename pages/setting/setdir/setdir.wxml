@@ -5,7 +5,7 @@
     <!--<view class="self-container">-->
    <!--radio-->
         <view class="page-section">
-      <view class="page-section-title">推荐展示样式</view>
+      <view class="page-section-title">设置当前仓库</view>
       <view class="weui-cells weui-cells_after-title">
         <radio-group bindchange="radioChange">
           <label class="weui-cell weui-check__label" wx:for="{{dirArray}}" wx:key="{{item.value}}">

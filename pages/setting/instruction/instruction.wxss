@@ -1,9 +1,10 @@
 /* instruction.wxss */
 .display_area{
-  margin: 20px auto;
+  margin: 1px auto;
   width: 80%;
 }
 
 .text{
-  padding: 10px 1px;
+  padding: 1px 1px;
+  font-size: 15px;
 }

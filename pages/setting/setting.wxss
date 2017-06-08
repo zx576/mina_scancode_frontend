@@ -1,11 +1,47 @@
 /* setting.wxss */
 .self-container{
   width: 80%;
-  margin: 100px auto
-
+  margin: 100px auto;
 }
-
+.self-bg{
+    background-color: #f8f8f8
+}
 .self-btn{
   width: 80%;
-  margin: 100px auto
+  margin: 100px auto;
 }
+.self-kind-container{
+    padding: 0 30rpx 40rpx;
+    margin: 100px auto;
+}
+
+.self-kind-list{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    
+}
+.kind-list-item{
+    padding-bottom: 10px;
+}
+.list-item-hd{
+    padding: 0 10px;
+    background-color: #ffffff;
+    height:50px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between
+}
+.self-pix{
+    width: 20px;
+    height: 20px;
+    /*vertical-align: middle*/
+
+}
+
+.list-hd-text{
+    font-size: 18px;
+}
+
+

@@ -10,8 +10,8 @@ Page({
   data: {
 
     code: '', // 扫码结果
-    name: '请输入商品名',
-    remarks: '请输入商品备注',
+    name: '',
+    remarks: '',
     count: 0, // 商品数量默认为0
     dir:'',  // 仓库名
     cookie: '',
@@ -125,11 +125,11 @@ Page({
     console.log('所有数据',data)
 
     // 处理商品名,备注名为空的情况
-    if (data['name'] == '请输入商品名'){
+    if (data['name'] == ''){
       data['name'] = data['code'].substring(0,16)
     }
 
-    if (data['remarks'] == '请输入商品备注'){
+    if (data['remarks'] == ''){
       data['remarks'] = ''
     }
 

@@ -3,22 +3,28 @@
   <view class="page__hd"></view>
   <view class="page__bd self-container">
     <!--<view class="self-container">-->
-    <!--选择器-->
-    <view class="section self-container">
-      <view class="section__title">仓库选择器</view>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{dirArray}}">
-      <view class="picker ">
-        当前仓库(点我选择)：{{dirArray[index]}}
-      </view>
-      </picker>
-    </view>
+   <!--radio-->
+        <view class="page-section">
+      <view class="page-section-title">推荐展示样式</view>
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="radioChange">
+          <label class="weui-cell weui-check__label" wx:for="{{dirArray}}" wx:key="{{item.value}}">
 
-    <button class="weui-btn" type="primary" bindtap="returnindex">返回主页</button>
-    <!--选择器 end-->
-    <!--</view>-->
+            <view class="weui-cell__hd">
+              <radio value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <!--radio end-->
+
+    <button class="weui-btn self-btn" type="primary" bindtap="returnindex">返回主页</button>
+
     <view class="weui-footer weui-footer_fixed-bottom">
 
-    <view class="weui-footer__text">**Crossin的编程教室**</view>
+    <view class="weui-footer__text">Crossin的编程教室</view>
   </view>
   </view>
 </view>

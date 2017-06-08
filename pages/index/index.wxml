@@ -10,18 +10,23 @@
   </view>
 
   <!--end-->
-    <text class="self-hd-text">操作者：{{userInfo.nickName}}</text>
+  <view class="self-index-head">
+    <text class="self-hd-text-left">仓库：{{dir}}</text>
+    <text class="self-hd-text-right">操作者：{{userInfo.nickName}}</text>
+  </view>
+    
   </view>
   <view class="page__bd">
 
-    <view  bindtap="bindViewTap" class="userinfo">
+    <!--<view  bindtap="bindViewTap" class="userinfo">
       <text class="userinfo-nickname">当前操作仓库为</text>
       <text>{{dir}}</text>
-      <text class="self-mid-text">更改仓库点击右下角进入设置页面</text>   
+      <text class="self-mid-text">更改仓库点击右下角进入设置页面</text>   -->
       
-    </view>
+    <!--</view>-->
 
-    <view class="button-sp-area self-btn-group center">
+    
+    <view class="button-sp-area center ">
       <button bindtap="datain" class="weui-btn" type="primary" plain='true'>入库</button>
       <button bindtap="dataout" class="weui-btn" type="primary" plain='true'>出库</button>
       <button bindtap="query" class="weui-btn" type="primary" plain='true'>查询</button>
@@ -31,6 +36,6 @@
   
  
   <view class="weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__text">**Crossin的编程教室**</view>
+    <view class="weui-footer__text">Crossin的编程教室</view>
   </view>
 </view>

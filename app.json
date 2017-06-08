@@ -14,15 +14,16 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "backgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "扫码入库",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#3cc51f",
     "borderStyle": "black",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#F8F8F8",
     "list": [
       {
         "pagePath": "pages/index/index",

@@ -18,7 +18,7 @@
         </view>
         <view class="weui-msg__extra-area">
     <view class="weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__text">**Crossin的编程教室**</view>
+    <view class="weui-footer__text">Crossin的编程教室</view>
   </view>
         </view>
     </view>

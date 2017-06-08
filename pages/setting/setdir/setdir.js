@@ -9,9 +9,7 @@ Page({
     cookie: '',
     domain: '',
     dirArray: '', // 所有仓库名列表
-    objectArray:'', // 仓库以及索引
     dir: '', // 目前选择
-    index : 0 // 仓库索引
   
   },
 
@@ -24,45 +22,33 @@ Page({
     var dir = app.globalData.cur_dir
     var domain = app.globalData.domain
     var dirs = app.globalData.dirs
-    // console.log('stdirs=',dirs)
-    var count = 0
-    var obj = []
-    var cur_index = 0
 
+    var array = []
     for (var key of dirs){
-      // console.log('key=',key)
-      if (key == dir){
-        cur_index = count
-      }
-      var dct = {}
-      dct['name'] = key
-      dct['id'] = count
-      obj.push(dct)
-      count += 1
+        var dct = {}
+        if (key == dir){
+            dct['checked'] = 'true'
+        }
+        dct['name'] = key
+        dct['value'] = key
+        array.push(dct)
     }
-
     this.setData({
       cookie: cookie,
       dir: dir,
       domain:domain,
-      objectArray:obj,
-      index:cur_index,
-      dirArray:dirs 
+      dirArray:array 
     })
     
-    // this.query_dir()
-    // console.log('setdir',this.data)
-
     
   },
-  bindPickerChange: function (e) {
-    // console.log('picker发送选择改变，携带值为', e.detail.value)
-    var index = e.detail.value
-    this.setData({
-      index: index
-    })
-    app.globalData.cur_dir = this.data.dirArray[index]
-    // console.log('changedir', app.globalData.cur_dir)
+
+  radioChange: function(e) {
+      var dir = e.detail.value
+      this.setData({
+          dir: dir
+      })
+      app.globalData.cur_dir = this.data.dir
   },
 
   returnindex: function () {

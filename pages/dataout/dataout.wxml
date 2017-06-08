@@ -18,7 +18,7 @@
       <!--仓库选择器-->
             <view class="weui-cell weui-cell_input">
         <view class="weui-cell_hd">
-          <view class="weui-label">仓库名: </view>
+          <view class="weui-label">当前仓库: </view>
         </view>
         <view class="weui-cell__bd">
           <text>{{dir}}</text>
@@ -56,7 +56,7 @@
       <!--确认出库按钮-->
       <button bindtap="dataOut" class="weui-btn self-out-btn" type="primary" plain='true'>确认出库</button>
       <view class="weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__text">**Crossin的编程教室**</view>
+    <view class="weui-footer__text">Crossin的编程教室</view>
   </view>
     </view>
   </view>

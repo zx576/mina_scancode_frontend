@@ -4,24 +4,37 @@
   <view class="page__bd ">
 
     <!--仓库选择器-->
-      <view class="weui-cell section self-query-sec">
-        <view class="section__title">仓库名: </view>
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{dirArray}}">
-          <view class="picker">
-            {{dir}}
-          </view> 
-        </picker>
-      </view> 
+      <!--new-->
+      <view class="page-section self-con">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">当前仓库</view>
+          </view>
+          <view class="weui-cell__bd ">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{dirArray}}" >
+              <view class="self-pk-hd">
+                <view class="weui-input">{{dir}}</view>
+                <image src="/image/down.png" class='self-pix'></image>
+              </view>
+            </picker>          
+          </view>
+        </view>
+      </view>
+      </view>
+
 
     <!--数据显示--> 
     <view class="table">
       <view class="tr">
         <view class="th">商品名</view>
         <view class="th">库存数量</view>
+        <view class="th">备注</view>
       </view>
       <view class="tr" wx:for="{{info}}">
         <view class="td">{{item.name}}</view>
         <view class="td">{{item.count}}</view>
+        <view class="td">{{item.remark}}</view>
       </view>
     </view>
 
@@ -29,18 +42,8 @@
     <button bindtap="index" class='weui-btn self-btn' type='primary' plain='true'>返回首页</button>
 
     <view class="weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__text">**Crossin的编程教室**</view>
+    <view class="weui-footer__text">Crossin的编程教室</view>
   </view>
     
   </view>
 </view>
-
-
-
-<!--<view wx:for="{{info}}" class="classname">
-{{item.fields.name}}:{{item.fields.code}}:{{item.fields.count}}
-
-</view>
-
-<button bindtap="query">查看所有数据</button>-->
-

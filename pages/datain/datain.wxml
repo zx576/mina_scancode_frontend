@@ -27,7 +27,7 @@
       <!--仓库选择器-->
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell_hd">
-          <view class="weui-label">仓库名: </view>
+          <view class="weui-label">当前仓库: </view>
         </view>
         <view class="weui-cell__bd">
           <text>{{dir}}</text>
@@ -39,7 +39,7 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="{{name}}" bindinput="namein" />
+                    <input class="weui-input" value="{{name}}" placeholder="请输入商品名" bindinput="namein" />
                 </view>
             </view>
         </view>
@@ -49,7 +49,7 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell">
                 <view class="weui-cell__bd">
-                    <textarea class="weui-textarea" placeholder="{{remarks}}" style="height: 3.3em" bindinput="remarkin" />
+                    <textarea class="weui-textarea" value='{{remarks}}' placeholder="请输入商品备注" style="height: 3.3em" bindinput="remarkin" />
                     <!--<view class="weui-textarea-counter">0/200</view>-->
                 </view>
             </view>
@@ -59,7 +59,7 @@
       <button bindtap="saveDataIn" class="weui-btn self-btn" type="primary">保存</button>
 
       <view class="weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__text">**Crossin的编程教室**</view>
+    <view class="weui-footer__text">Crossin的编程教室</view>
   </view>
     </view>
   </view>

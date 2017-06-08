@@ -1,31 +1,37 @@
 <!--setting.wxml-->
-<view class="page">
+<view class="page self-bg">
   <view class="page__hd"></view>
   <view class="page__bd">
-    <view class="display_area">
-      <!--跳转列表项-->
-              <view class="weui-cells__title">设置项</view>
-        <view class="weui-cells weui-cells_after-title">
-            <!--跳转项1-->
-            <navigator url="setdir/setdir" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">设置默认仓库</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-            </navigator>
-            <!--跳转项2-->
-            <navigator url="buildnew/buildnew" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">新建仓库</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-            </navigator>
-            <!--跳转项3-->
-            <navigator url="instruction/instruction" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">小程序使用说明</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-            </navigator>
+        <!--new-->
+        <view class="self-kind-container">
+            <view class="self-kind-list">
+                <!--跳转项-->
+                <view class="kind-list-item">
+                    <navigator class="list-item-hd" url="setdir/setdir">
+                        <view class="list-hd-text">设置当前仓库</view>
+                        <image src="/image/right.png" class='self-pix'></image>
+                    </navigator>
+                </view>
+                <!--跳转项-->
+                <view class="kind-list-item">
+                    <navigator class="list-item-hd" url="buildnew/buildnew">
+                        <view class="list-hd-text">新建仓库</view>
+                        <image src="/image/right.png" class='self-pix'></image>
+                    </navigator>
+                </view>
+                <!--跳转项-->
+                <view class="kind-list-item">
+                    <navigator class="list-item-hd" url="instruction/instruction">
+                        <view class="list-hd-text">使用指南</view>
+                        <image src="/image/right.png" class='self-pix'></image>
+                    </navigator>
+                </view>
+            </view>
         </view>
-        <!--列表项结束-->
+        <!--newend-->
         <view class="weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__text">**Crossin的编程教室**</view>
+    <view class="weui-footer__text">Crossin的编程教室</view>
   </view>
-    </view>
+    
   </view>
 </view>

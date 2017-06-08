@@ -6,7 +6,7 @@ Page({
    */
   data: {
     sucinfo: ''
-  
+
   },
 
   /**

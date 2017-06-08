@@ -49,3 +49,22 @@
   height: 2rem;
   align-items: center;
 }
+
+.self-pk-hd{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center
+}
+.self-pix{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    /*vertical-align: middle*/
+
+}
+
+.self-con{
+    width: 80%;
+    margin: 30px auto
+}

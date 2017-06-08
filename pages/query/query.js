@@ -71,7 +71,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        // console.log(res)
+        console.log(res)
         var info = res['data']
         if (typeof info.error !== 'undefined') {
           // 错误处理

@@ -1,3 +1,38 @@
+
+## 程序实现
+
+#### 本小程序技术栈：
+
+后端采用：MySQL + django
+
+前端采用：小程序语法 + weui.wxss
+
+#### 开发过程中遇到的技术问题
+
+1、文档
+
+开发过程大量参考了小程序官方文档，小程序网页平台可见
+
+以及 github 上的相关 demo : https://github.com/justjavac/awesome-wechat-weapp
+
+UI 使用了 weui.wxss: https://github.com/weui/weui-wxss/
+
+2、前后端交互
+
+后端向前端传递数据采用 json 字典作为数据流载体
+前端向后端请求数据采用 POST 方法
+
+
+3、登陆问题
+
+小程序由于其特殊性，不能使用 session 机制，所以在 django 用户认证的时候遇到了一些麻烦
+
+参考文章：http://www.cnblogs.com/ihardcoder/p/6279602.html
+
+在此简述本小程序的登陆原理：
+
+用户打开小程序时，向后端发送用户特有 code 以及加密用户信息，使用 code 请求微信服务器返回 session_key 和 openid，同时解密用户信息，比对 openid 。完成之后随机生成一组数据作为 cookie 返回前端，此后用户进行所有操作之前比对 cookie ，以此验证身份。
+
 ## 扫码入库小程序使用说明
 
 #### 功能项
@@ -51,35 +86,3 @@
 设置默认仓库可切换当前操作仓库，强烈建议出入库之前确认当前操作仓库，以免出入库错误。
 
 新建仓库允许当前操作人建立属于自己的仓库。
-
-## 程序实现
-
-#### 本小程序技术栈：
-
-后端采用：MySQL + django
-
-前端采用：小程序语法 + weui.wxss
-
-#### 开发过程中遇到的技术问题
-
-1、文档
-
-开发过程大量参考了小程序官方文档，小程序网页平台可见
-以及 github 上的相关 demo : https://github.com/justjavac/awesome-wechat-weapp
-UI 模仿了 weui.wxss demo内容: https://github.com/weui/weui-wxss/
-
-2、前后端交互
-
-后端向前端传递数据采用 json 字典作为数据流载体
-前端向后端请求数据采用 POST 方法
-
-
-3、登陆问题
-
-小程序由于其特殊性，不能使用 session 机制，所以在 django 用户认证的时候遇到了一些麻烦
-
-参考文章：http://www.cnblogs.com/ihardcoder/p/6279602.html
-
-在此简述本小程序的登陆原理：
-
-用户打开小程序时，向后端发送用户特有 code，以及加密用户信息，使用 code 请求微信服务器返回 session_key 和 openid，同时解密用户信息，比对 openid 。完成之后随机生成一组数据作为 cookie 返回前端，此后用户进行所有操作之前比对 cookie ，以此验证身份。

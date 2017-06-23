@@ -30,8 +30,7 @@
         "iconPath": "image/main.png",
         "selectedIconPath": "image/main_green.png",
         "text": "主页"
-      },
-      {
+      },{
         "pagePath": "pages/setting/setting",
         "iconPath": "image/setting.png",
         "selectedIconPath": "image/setting_green.png",
